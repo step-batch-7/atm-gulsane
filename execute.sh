@@ -1,12 +1,14 @@
 #! /bin/bash
 
-excecutable=$1
+mkdir -p bin
+rm -rf ./*.o
 
-rm -rf $directory/*.o
+excecutable=$1
 
 gcc -c ./*.c
 gcc -o $excecutable ./*.o
 
 mv $excecutable ./bin
 ./bin/$excecutable
-rm -rf *.o
+
+rm -rf ./*.o
